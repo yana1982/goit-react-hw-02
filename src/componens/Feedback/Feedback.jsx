@@ -7,25 +7,17 @@ const Feedback = ({
   positiveFeedback,
 }) => {
   return (
-    <div>
-      <ul>
-        <li>
-          <p>Good:{goodFeedback}</p>
-        </li>
-        <li>
-          <p>Neutral:{neutralFeedback}</p>
-        </li>
-        <li>
-          <p>Bad:{badFeedback}</p>
-        </li>
-        <li>
-          <p>Total:{totalFeedback}</p>
-        </li>
-        <li>
-          <p>Positive:{positiveFeedback}</p>
-        </li>
-      </ul>
-    </div>
+    totalFeedback >= 1 && (
+      <div>
+        <ul>
+          <li>Good:{goodFeedback}</li>
+          <li>Neutral:{neutralFeedback}</li>
+          <li>Bad:{badFeedback}</li>
+          <li>Total:{totalFeedback}</li>
+          <li>Positive:{positiveFeedback}</li>
+        </ul>
+      </div>
+    )
   );
 };
 

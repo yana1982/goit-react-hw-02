@@ -1,4 +1,3 @@
-// import React from "react";
 import css from "./Options.module.css";
 
 const Options = ({ onOptionFeedback, onResetFeedback, totalFeedback }) => {

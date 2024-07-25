@@ -6,18 +6,19 @@ import Notification from "./componens/Notification/Notification";
 import "./App.css";
 
 function App() {
-  const getFeedback = () => {
-    const savedFeedback = window.localStorage.getItem("saved-feedback");
-    return savedFeedback !== null ? JSON.parse(savedFeedback) : reviewsOptions;
-  };
+  // const getFeedback = () => {
+  //   const savedFeedback = window.localStorage.getItem("saved-feedback");
+  //   return savedFeedback !== null ? JSON.parse(savedFeedback) : reviewsOptions;
+  // };
 
   const reviewsOptions = { good: 0, neutral: 0, bad: 0 };
-  const [feedbacks, setFeedbacks] = useState(getFeedback);
+  const [feedbacks, setFeedbacks] = useState(reviewsOptions);
 
-  useEffect(() => {
-    window.localStorage.setItem("saved-feedback", JSON.stringify(feedbacks));
-  }, [feedbacks]);
+  // useEffect(() => {
+  //   window.localStorage.setItem("saved-feedback", JSON.stringify(feedbacks));
+  // }, [feedbacks]);
 
+  //
   const updateFeedback = (feedbackType) => {
     setFeedbacks({
       ...feedbacks,
@@ -30,6 +31,7 @@ function App() {
   };
 
   const totalFeedback = feedbacks.good + feedbacks.neutral + feedbacks.bad;
+
   const positiveFeedback = Math.round((feedbacks.good / totalFeedback) * 100);
 
   return (
@@ -47,7 +49,7 @@ function App() {
         totalFeedback={totalFeedback}
         positiveFeedback={positiveFeedback}
       />
-      <Notification />
+      <Notification totalFeedback={totalFeedback} />
     </>
   );
 }
