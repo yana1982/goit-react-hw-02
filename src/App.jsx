@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Container from "./componens/Container/Container";
 import Description from "./componens/Description/Description";
 import Options from "./componens/Options/Options";
 import Feedback from "./componens/Feedback/Feedback";
@@ -36,20 +37,22 @@ function App() {
 
   return (
     <>
-      <Description />
-      <Options
-        onOptionFeedback={updateFeedback}
-        onResetFeedback={resetFeedback}
-        totalFeedback={totalFeedback}
-      />
-      <Feedback
-        goodFeedback={feedbacks.good}
-        neutralFeedback={feedbacks.neutral}
-        badFeedback={feedbacks.bad}
-        totalFeedback={totalFeedback}
-        positiveFeedback={positiveFeedback}
-      />
-      <Notification totalFeedback={totalFeedback} />
+      <Container>
+        <Description />
+        <Options
+          onOptionFeedback={updateFeedback}
+          onResetFeedback={resetFeedback}
+          totalFeedback={totalFeedback}
+        />
+        <Feedback
+          goodFeedback={feedbacks.good}
+          neutralFeedback={feedbacks.neutral}
+          badFeedback={feedbacks.bad}
+          totalFeedback={totalFeedback}
+          positiveFeedback={positiveFeedback}
+        />
+        <Notification totalFeedback={totalFeedback} />
+      </Container>
     </>
   );
 }
