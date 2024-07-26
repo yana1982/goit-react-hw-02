@@ -5,7 +5,7 @@ const Notification = ({ totalFeedback }) => {
     ""
   ) : (
     <>
-      <p>No feedback yet.</p>
+      <p className={css.text}>No feedback yet.</p>
     </>
   );
 };

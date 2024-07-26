@@ -9,12 +9,12 @@ const Feedback = ({
   return (
     totalFeedback >= 1 && (
       <div>
-        <ul>
-          <li>Good:{goodFeedback}</li>
-          <li>Neutral:{neutralFeedback}</li>
-          <li>Bad:{badFeedback}</li>
-          <li>Total:{totalFeedback}</li>
-          <li>Positive:{positiveFeedback}</li>
+        <ul className={css.list}>
+          <li className={css.item}>Good:{goodFeedback}</li>
+          <li className={css.item}>Neutral:{neutralFeedback}</li>
+          <li className={css.item}>Bad:{badFeedback}</li>
+          <li className={css.item}>Total:{totalFeedback}</li>
+          <li className={css.item}>Positive:{positiveFeedback}</li>
         </ul>
       </div>
     )

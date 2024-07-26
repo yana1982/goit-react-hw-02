@@ -1,0 +1,16 @@
+.title {
+  font-size: 32px;
+  font-weight: 900;
+  color: cornflowerblue;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.spamTitle {
+  color: cadetblue;
+}
+.text {
+  font-size: 20px;
+  font-weight: 400;
+  color: darkslategray;
+  text-align: start;
+}
