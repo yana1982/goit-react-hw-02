@@ -7,19 +7,18 @@ import Notification from "./componens/Notification/Notification";
 import "./App.css";
 
 function App() {
-  // const getFeedback = () => {
-  //   const savedFeedback = window.localStorage.getItem("saved-feedback");
-  //   return savedFeedback !== null ? JSON.parse(savedFeedback) : reviewsOptions;
-  // };
+  const getFeedback = () => {
+    const savedFeedback = window.localStorage.getItem("saved-feedback");
+    return savedFeedback !== null ? JSON.parse(savedFeedback) : reviewsOptions;
+  };
 
   const reviewsOptions = { good: 0, neutral: 0, bad: 0 };
-  const [feedbacks, setFeedbacks] = useState(reviewsOptions);
+  const [feedbacks, setFeedbacks] = useState(getFeedback);
 
-  // useEffect(() => {
-  //   window.localStorage.setItem("saved-feedback", JSON.stringify(feedbacks));
-  // }, [feedbacks]);
+  useEffect(() => {
+    window.localStorage.setItem("saved-feedback", JSON.stringify(feedbacks));
+  }, [feedbacks]);
 
-  //
   const updateFeedback = (feedbackType) => {
     setFeedbacks({
       ...feedbacks,
